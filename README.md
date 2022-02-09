@@ -10,7 +10,7 @@ The following notes provide help to use this code to benchmark new methods for C
 Allows to directly simulate data according to the data generation procedure described in Section 5.1, and to apply on it the wide range of methods considered (OSSCP, Offline SSCP, EnbPI, EnbPI V2, ACI with one gamma chosen). Further parameters can be given, that we recall in the following command line:
 
 ```shell
-$ python main.py --alpha 0.1 --nrep 100 --ar -0.9 --process_variance 10 --methods "CP" "ACP" "EnbPI" --gamma 0.05
+python main.py --alpha 0.1 --nrep 100 --ar -0.9 --process_variance 10 --methods "CP" "ACP" "EnbPI" --gamma 0.05
 ```
 
 ###### General parameters
