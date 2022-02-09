@@ -48,7 +48,7 @@ This part is in R language, as the OPERA package is not yet available in python.
 
 ## Figures
 
-We explain how to obtain these Figures, using the previously described files.
+We explain how to obtain these Figures, using the previously described files. For repository size concerns, data and results of the different models are available only for the figures of the main part of the paper. We explain here how to re-generate these data and results, and the appendices plots can be obtained by adapting these explanations.
 
 ##### Figure 3
 
@@ -117,11 +117,11 @@ Values of phi for the experiments should be changed in ``ar_numerical.py`` line 
 
 ### Application to French electricity spot prices forecasting
 
-The folder data_prices contains ``Prices_2016_2019_extract.csv``, that is the considered French electricity spot prices data set from 2016 to 2019  with the explanatory variables used. To apply the different methods, a notebook, ``Application_Spot_France.ipynb``, is provided containing all the codes, the cells should only be re-executed. This will especially give you Figures 6 and 7. Note that to add AgACI you need to run the cell in the notebooks for the different gammas (especially cell 12), then use the same file in ``AgACI/Scripts/acp_gamma.R`` until line 20 and then everything after line 113. Then go back to the notebook!
+The folder data_prices contains ``Prices_2016_2019_extract.csv``, that is the considered French electricity spot prices data set from 2016 to 2019  with the explanatory variables used (coming from **eco2mix**). To apply the different methods, a notebook, ``Application_Spot_France.ipynb``, is provided containing all the codes, the cells should only be re-executed. This will especially give you Figures 6 and 7. Note that to add AgACI you need to run the cell in the notebooks for the different gammas (especially cell 12), then use the same file in ``AgACI/Scripts/acp_gamma.R`` until line 20 and then everything after line 113. Then go back to the notebook!
 
 ## Planned improvements of this repository
 
-1. Complete missing comments
+1. Improve comments
 2. Rename ACI everywhere (instead of ACP)
-3. Merge the functions to run with different gamma (``models/run_multiple_gamma_ACP``) and the baselines one (``models/run_experiment``)
+3. Merge the functions to run with different gamma (``models.run_multiple_gamma_ACP``) and the baselines one (``models.run_experiments``)
 4. Generalize all the repository so that any (?) regressor with a .fit and .predict method can be used (at least for ACI, SCP and Gaussian)
