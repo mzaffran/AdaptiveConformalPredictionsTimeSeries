@@ -2,7 +2,7 @@ import pickle
 import csv
 
 def get_name_data(n, regression='Friedman', noise='ARMA', params_reg={}, params_noise={}, seed=1):
-    """ ...
+    """ 
 
     Parameters
     ----------
@@ -18,7 +18,8 @@ def get_name_data(n, regression='Friedman', noise='ARMA', params_reg={}, params_
     Returns
     -------
 
-    name :
+    name : name of the file containing (if existing)
+    the generated data with the given parameters of simulations
 
     """
 

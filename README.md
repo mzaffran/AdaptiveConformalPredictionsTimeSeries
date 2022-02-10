@@ -121,7 +121,6 @@ The folder data_prices contains ``Prices_2016_2019_extract.csv``, that is the co
 
 ## Planned improvements of this repository
 
-1. Improve comments
-2. Rename ACI everywhere (instead of ACP)
-3. Merge the functions to run with different gamma (``models.run_multiple_gamma_ACP``) and the baselines one (``models.run_experiments``)
-4. Generalize all the repository so that any (?) regressor with a .fit and .predict method can be used (at least for ACI, SCP and Gaussian)
+1. Update ACP name to be consistent with ACI (Gibbs & Candès)
+2. Merge the functions to run with different gamma (``models.run_multiple_gamma_ACP``) and the baselines one (``models.run_experiments``)
+3. Generalize all the repository so that any (?) regressor with a .fit and .predict method can be used (at least for ACI, SCP and Gaussian)

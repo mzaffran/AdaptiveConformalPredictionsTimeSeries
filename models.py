@@ -38,8 +38,8 @@ def fit_predict(X, Y, alpha, methods, params_methods, basemodel, params_basemode
     y_lowers : inferior bound of the predicted intervals, array of dim len(methods) x (n-train_size)
                results are in the same order than the methods list
     y_uppers : superior bound of the predicted intervals, array of dim len(methods) x (n-train_size)
-    times :
-    times_proc :
+    times : user time spent for each prediction (proper training, calibration and prediction)
+    times_proc : CPU time spent for each prediction (proper training, calibration and prediction)
 
     """
 

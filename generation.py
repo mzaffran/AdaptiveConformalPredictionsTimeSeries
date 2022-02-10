@@ -4,7 +4,7 @@ import statsmodels as sm
 import statsmodels.tsa.arima_process
 
 def generate_data(n, regression='Friedman', noise='ARMA', params_reg={}, params_noise={}, seed=1):
-    """ ...
+    """
 
     Parameters
     ----------
@@ -70,7 +70,7 @@ def generate_data(n, regression='Friedman', noise='ARMA', params_reg={}, params_
     return X, Y
 
 def generate_multiple_data(n, regression='Friedman', noise='ARMA', params_reg={}, params_noise={}, seed_max=1):
-    """ ...
+    """ 
 
     Parameters
     ----------
