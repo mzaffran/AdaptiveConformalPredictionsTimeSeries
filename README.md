@@ -16,7 +16,7 @@ The following notes provide help to use this code to benchmark new methods for C
 - `AgACI/` contains the R code og AgACI algorithm.
 - `data/`contains all data pickle files generated.
 - `data_prices/` contains the French electricity spot prices data set, built using data from **eco2mix**.
-- `enbpi/` contains the code of the EnbPI algorithm, from Xu and Xie, ICML, 2021 (https://github.com/hamrel-cxu/EnbPI/tree/main), as well as a modification for EnbPI V2. 
+- `enbpi/` contains the code of the EnbPI algorithm, from Xu and Xie, ICML, 2021 (https://github.com/hamrel-cxu/EnbPI/tree/main), as well as a modification for EnbPI V2.
 - `plots/` contains the plots produced by the jupyter notebooks (currently empty for size purposes).
 - `results/` contains all results pickle files obtained.
 
@@ -89,7 +89,7 @@ $ python main_acp.py --alpha 0.1 --nrep 500 --ar -0.8 --ma 0.9 --process_varianc
 $ python main_acp.py --alpha 0.1 --nrep 500 --ar -0.1 --ma 0.1 --process_variance 10
 ```
 
-Then you can use the first part in ``AgACI/R/acp_gamma.R``, until line 88.
+Then you can use the first part in ``AgACI/Script/acp_gamma.R``, until line 88.
 
 Finally, use the jupyter notebook ``plots_gamma.ipynb``.
 
@@ -129,7 +129,7 @@ $ python main.py --alpha 0.1 --nrep 500 --ar -0.8 --ma 0.8 --process_variance 10
 $ python main.py --alpha 0.1 --nrep 500 --ar -0.1 --ma 0.1 --process_variance 10 --methods "EnbPI" --mean 0
 ```
 
-Then you can execute the jupyter notebook ``plots.ipnyb`` until cell 7 to obtain Figure 5.
+Then you can execute the jupyter notebook ``plots.ipnyb`` until cell 19 to obtain Figure 5.
 To execute the next cells, corresponding to figures in appendices, you need to generate the results by adapting the necessary command lines above and running them before going onto the notebook.
 
 #### Application to French electricity spot prices forecasting
