@@ -3,7 +3,24 @@
 This directory contains implementations of the methods described in the paper "Adaptive Conformal Predictions for Time Series", as well as details to reproduce the main figures of the paper.
 The following notes provide help to use this code to benchmark new methods for CP in time series.
 
-## Main files and folders
+## Table of Contents
+
+- [Organization](#organization)
+- [Usage](#usage)
+- [Reproducing the experiments](#reproducing-the-experiments)
+- [Improvements](#planned-improvements-of-this-repository)
+- [License](#license)
+
+## Organization
+
+- `AgACI/` contains the R code og AgACI algorithm.
+- `data/`contains all data pickle files generated.
+- `data_prices/` contains the French electricity spot prices data set, built using data from **eco2mix**.
+- `enbpi/` contains the code of the EnbPI algorithm, from Xu and Xie, ICML, 2021 (https://github.com/hamrel-cxu/EnbPI/tree/main), as well as a modification for EnbPI V2. 
+- `plots/` contains the plots produced by the jupyter notebooks (currently empty for size purposes).
+- `results/` contains all results pickle files obtained.
+
+## Usage
 
 #### File ``main.py``
 
@@ -46,9 +63,21 @@ Works similarly but the aim is here to apply different versions of ACI. To do so
 In the folder AgACI, a R project allows to wrap around the results produced by ``main_acp.py`` once they have been created. The list of gamma should also be specified.
 This part is in R language, as the OPERA package is not yet available in python. OPERA allows to compute online agregation with expert advice for several rules, such as EWA, ML-poly or BOA.
 
-## Figures
+## Reproducing the experiments
 
-We explain how to obtain these Figures, using the previously described files. For repository size concerns, data and results of the different models are available only for the figures of the main part of the paper. We explain here how to re-generate these data and results, and the appendices plots can be obtained by adapting these explanations.
+We explain how to obtain the Figures from the paper, using the previously described files. For repository size concerns, data and results of the different models are available only for the figures of the main part of the paper. We explain here how to re-generate these data and results, and the appendices plots can be obtained by adapting these explanations.
+
+##### Figure 2
+
+To obtain Figure 2, you need to run:
+
+```shell
+$ python ar_numerical.py --seed k
+```
+In our experiments we repeated this for seeds k from 0 to 24.
+Then, to obtain the plot, just execute the jupyter notebook ``arma_numerical_plot.ipynb``.
+
+Values of phi for the experiments should be changed in ``ar_numerical.py`` line 29 if you wish to.
 
 ##### Figure 3
 
@@ -103,19 +132,7 @@ $ python main.py --alpha 0.1 --nrep 500 --ar -0.1 --ma 0.1 --process_variance 10
 Then you can execute the jupyter notebook ``plots.ipnyb`` until cell 7 to obtain Figure 5.
 To execute the next cells, corresponding to figures in appendices, you need to generate the results by adapting the necessary command lines above and running them before going onto the notebook.
 
-##### Figure 2
-
-To obtain Figure 2, you need to run:
-
-```shell
-$ python ar_numerical.py --seed k
-```
-In our experiments we repeated this for seeds k from 0 to 24.
-Then, to obtain the plot, just execute the jupyter notebook ``arma_numerical_plot.ipynb``.
-
-Values of phi for the experiments should be changed in ``ar_numerical.py`` line 29 if you wish to.
-
-### Application to French electricity spot prices forecasting
+#### Application to French electricity spot prices forecasting
 
 The folder data_prices contains ``Prices_2016_2019_extract.csv``, that is the considered French electricity spot prices data set from 2016 to 2019  with the explanatory variables used (coming from **eco2mix**). To apply the different methods, a notebook, ``Application_Spot_France.ipynb``, is provided containing all the codes, the cells should only be re-executed. This will especially give you Figures 6 and 7. Note that to add AgACI you need to run the cell in the notebooks for the different gammas (especially cell 12), then use the same file in ``AgACI/Scripts/acp_gamma.R`` until line 20 and then everything after line 113. Then go back to the notebook!
 
@@ -124,3 +141,7 @@ The folder data_prices contains ``Prices_2016_2019_extract.csv``, that is the co
 1. Update ACP name to be consistent with ACI (Gibbs & Candès)
 2. Merge the functions to run with different gamma (``models.run_multiple_gamma_ACP``) and the baselines one (``models.run_experiments``)
 3. Generalize all the repository so that any (?) regressor with a .fit and .predict method can be used (at least for ACI, SCP and Gaussian)
+
+## License
+
+[MIT](LICENSE) © Margaux Zaffran
