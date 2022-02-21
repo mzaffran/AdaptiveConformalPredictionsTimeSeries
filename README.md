@@ -1,6 +1,6 @@
 # Adaptive Conformal Predictions for Time Series
 
-This directory contains implementations of the methods described in the paper "Adaptive Conformal Predictions for Time Series", as well as details to reproduce the main figures of the paper.
+This directory contains implementations of the methods described in ["Adaptive Conformal Predictions for Time Series"](https://arxiv.org/abs/2202.07282), as well as details to reproduce the main figures of the paper.
 The following notes provide help to use this code to benchmark new methods for CP in time series.
 
 ## Table of Contents
