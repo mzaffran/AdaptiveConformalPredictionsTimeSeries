@@ -8,7 +8,7 @@ The following notes provide help to use this code to benchmark new methods for C
 - [Organization](#organization)
 - [Usage](#usage)
 - [Reproducing the experiments](#reproducing-the-experiments)
-- [Improvements](#planned-improvements-of-this-repository)
+- [Planned improvements](#planned-improvements-of-this-repository)
 - [License](#license)
 
 ## Organization
